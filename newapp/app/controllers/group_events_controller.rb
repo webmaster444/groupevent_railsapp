@@ -2,6 +2,13 @@ class GroupEventsController < ApplicationController
 	def new
 		@ge = GroupEvent.new
 	end
+
+	def publishnew
+		@ge = GroupEvent.new(groupevent_params)
+ 
+	  	@ge.save
+	  	redirect_to @ge
+	end
 	def create
 	  @ge = GroupEvent.new(groupevent_params)
  
@@ -47,10 +54,10 @@ class GroupEventsController < ApplicationController
 	    	render 'edit'
 	  	end
 	end
-	
+
 	private
-	def groupevent_params		
-		abort params.inspect
+	def groupevent_params	
+		abort params.inspect			
 	    params.require(:group_event).permit(:name, :description, :startdate, :duration, :status)
 	end
 end
