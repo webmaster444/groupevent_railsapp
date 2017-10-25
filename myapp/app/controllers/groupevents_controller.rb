@@ -11,6 +11,9 @@ class GroupeventsController < ApplicationController
   def show
     @ge = GroupEvent.find(params[:id])
   end
+    def edit
+    @article = Article.find(params[:id])
+  end
   def index
     @ges = GroupEvent.all
   end
