@@ -1,0 +1,22 @@
+<h1>Listing GroupEvents</h1>
+ 
+<table>
+  <tr>
+    <th>Event Name</th>
+    <th>Event Description</th>
+    <th>Event Start Date</th>
+    <th>Event Duration</th>    
+    <th>Event Status</th>    
+  </tr>
+ 
+  <% @ges.each do |ge| %>
+    <tr>
+      <td><%= ge.name %></td>
+      <td><%= ge.description %></td>
+      <td><%= ge.startdate %></td>
+      <td><%= ge.duration %></td>      
+      <td><%= ge.status %></td>
+      <td><%= link_to 'Show', groupevent_path(ge) %></td>
+    </tr>
+  <% end %>
+</table>
