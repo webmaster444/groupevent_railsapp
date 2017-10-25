@@ -8,13 +8,15 @@ class GroupeventsController < ApplicationController
 	  @ge.save
 	  redirect_to  groupevents_url
 	end
-
+  def show
+    @ge = GroupEvent.find(params[:id])
+  end
   def index
     @ges = GroupEvent.all
   end
 
 	private
 	  def groupevent_params
-	    params.require(:groupevent).permit(:name, :description)
+	    params.require(:groupevent).permit(:name, :description, :startdate, :duration, :status)
 	  end
 end

@@ -10,13 +10,13 @@
   </p>
   
   <p>
-    <%= form.label :startdate %><br>
-    <%= form.text_field :startdate %>
+    <%= form.label :startdate %><br>    
+    <%= form.text_field :startdate, "data-provide"=>'datepicker' %>
   </p>
 
   <p>
     <%= form.label :duration %><br>
-    <%= form.text_area :duration %>
+    <%= form.text_field :duration %>
   </p>
   <p>
     <%= form.submit %>
