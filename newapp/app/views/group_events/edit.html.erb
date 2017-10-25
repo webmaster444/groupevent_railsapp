@@ -23,6 +23,8 @@
   <p>
     <%= form.submit %>
   </p>
+      <%= link_to 'Publish Event', publishevent_path, {:class=>"btn btn-primary"}%>
+            <%= link_to 'Make Draft', makedraftevent_path, {:class=>"btn btn-primary"}%>
 <% end %>
  
 <%= link_to 'Back', group_events_path %>

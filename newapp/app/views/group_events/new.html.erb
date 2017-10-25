@@ -1,4 +1,4 @@
-<%= form_with scope: :groupevent, url: group_events_path, local: true do |form| %>
+<%= form_with scope: :group_event, url: group_events_path, local: true do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -20,8 +20,6 @@
   </p>
   <p>
     <%= form.submit %>
-    <%= link_to 'Publish Event', group_events_path %>
-    <%= link_to 'Save as Draft', group_events_path %>
   </p>
 
   <%= link_to 'Cancel', group_events_path %>
