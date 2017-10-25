@@ -1,0 +1,26 @@
+<%= form_with scope: :groupevent, url: group_events_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  
+  <p>
+    <%= form.label :startdate %><br>    
+    <%= form.text_field :startdate, "data-provide"=>'datepicker' %>
+  </p>
+
+  <p>
+    <%= form.label :duration %><br>
+    <%= form.text_field :duration %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+  <%= link_to 'Cancel', group_events_path %>
+<% end %>
