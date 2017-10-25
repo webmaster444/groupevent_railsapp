@@ -21,7 +21,7 @@ class GroupEventsController < ApplicationController
   	def update
 		@ge = GroupEvent.find(params[:id])
  
-	  	if @ge.update(groupevent_params)
+	  	if @ge.update(groupeventupdate_params)
 	    	redirect_to @ge
 	  	else
 	    	render 'edit'
@@ -31,5 +31,8 @@ class GroupEventsController < ApplicationController
 	private
 	def groupevent_params
 	    params.require(:groupevent).permit(:name, :description, :startdate, :duration, :status)
+	end
+	def groupeventupdate_params
+	    params.require(:group_event).permit(:name, :description, :startdate, :duration, :status)
 	end
 end
