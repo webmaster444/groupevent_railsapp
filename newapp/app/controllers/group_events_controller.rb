@@ -49,7 +49,15 @@ class GroupEventsController < ApplicationController
 	      update_draft_event
 	    end
   	end
-
+	
+	def destroy
+	  	@ge = GroupEvent.find(params[:id])
+	  	if @ge.update(status: 'Moved to Trash')
+	  		redirect_to @ge
+	  	else
+	  		render 'edit'
+	  	end
+	end
   	def update_publish_event
 	    @ge = GroupEvent.find(params[:id])
 	    @ge.status = 'Published'
