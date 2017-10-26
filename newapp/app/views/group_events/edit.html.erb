@@ -1,6 +1,6 @@
 <h1>Edit Group Event</h1>
  
-<%= form_with(model: @ge) do |form| %>
+<%= form_with(model: @ge, :class=>'newform') do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -21,8 +21,8 @@
     <%= form.number_field :duration %>
   </p>
   <p>
-    <%= form.submit :publish , {:class=>"btn btn-primary"}%>
-    <%= form.submit :draft, {:class=>"btn btn-default"} %>
+    <%= form.submit :publish , {:class=>"btn btn-primary" , :onclick => "return submitForm(this);"}%>
+    <%= form.submit :draft, {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
   </p>
 <% end %>
  

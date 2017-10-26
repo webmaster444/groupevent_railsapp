@@ -16,3 +16,16 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/dataTables.responsive
 //= require_tree .
+
+function submitForm (button){	
+	console.log(button);
+	if (button.value == "publish"){
+		
+	}
+	else if (button.value == "draft")
+	{
+		/* stay in the same window */
+	} 
+
+  	return false;
+}

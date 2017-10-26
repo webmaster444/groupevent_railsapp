@@ -1,4 +1,4 @@
-<%= form_with scope: :group_event, url: group_events_path, local: true do |form| %>
+<%= form_with scope: :group_event, url: group_events_path, class: "newform", local: true do |form| %>
   <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -23,8 +23,8 @@
     <%= form.text_field :location %>
   </p>
   <p>    
-    <%= form.submit :publish , {:class=>"btn btn-primary"} %>
-    <%= form.submit :draft , {:class=>"btn btn-default"} %>
+    <%= form.submit :publish , {:class=>"btn btn-primary" , :onclick => "return submitForm(this);"} %>
+    <%= form.submit :draft , {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
   </p>
   </p>
 
