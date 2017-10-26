@@ -20,6 +20,7 @@
 function submitForm (button){	
 	var returnValue = true;	
 	if (button.value == "publish"){		
+		$('#statusvalue').val('publish');
 		$(".newform :input").each(function() {			
 		   if($(this).val() === ""){				   	
 		   	$('.warnings').show();
@@ -28,6 +29,7 @@ function submitForm (button){
 		   }		    
 		});
   	}else if (button.value == "draft"){
+  		$('#statusvalue').val('draft');
 		if($('#event_name').val()==""){
 	   		$('.warnings').show();
 		   	$('.warnings').html('Event name is required field');	

@@ -41,7 +41,9 @@ class GroupEventsController < ApplicationController
   		@ge = GroupEvent.find(params[:id])
   	end
   	def update		 
-	    if params[:commit] == 'publish'
+  		st =  params["group_event"]['statusvalue']
+
+	    if st == 'publish'
 	      update_publish_event
 	    else
 	      update_draft_event

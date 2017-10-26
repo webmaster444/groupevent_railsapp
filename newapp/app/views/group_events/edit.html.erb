@@ -30,6 +30,8 @@
   <p>
     <%= form.submit :publish , {:class=>"btn btn-primary" , :onclick => "return submitForm(this);"}%>
     <%= form.submit :draft, {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
+
+    <%= form.hidden_field :statusvalue ,{:id=>"statusvalue"}%>
   </p>
 <% end %>
 <%= link_to 'Back', group_events_path %>
