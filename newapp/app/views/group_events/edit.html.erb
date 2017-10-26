@@ -25,5 +25,8 @@
     <%= form.submit :draft, {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
   </p>
 <% end %>
- 
+
+<div class="alert alert-danger">
+  Something went wrong
+</div> 
 <%= link_to 'Back', group_events_path %>
