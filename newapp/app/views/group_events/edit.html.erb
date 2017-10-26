@@ -1,5 +1,8 @@
 <h1>Edit Group Event</h1>
- 
+
+<div class="alert alert-danger">
+  Something went wrong
+</div> 
 <%= form_with(model: @ge, :class=>'newform') do |form| %>
   <p>
     <%= form.label :name %><br>
@@ -25,8 +28,4 @@
     <%= form.submit :draft, {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
   </p>
 <% end %>
-
-<div class="alert alert-danger">
-  Something went wrong
-</div> 
 <%= link_to 'Back', group_events_path %>
