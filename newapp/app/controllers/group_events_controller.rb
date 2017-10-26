@@ -19,7 +19,7 @@ class GroupEventsController < ApplicationController
 
 	def publish_event
 	  @ge = GroupEvent.new(groupevent_params)
- 		@ge.status = 'Publised'
+ 		@ge.status = 'Published'
 	  @ge.save
 	  redirect_to @ge
 	end
@@ -29,6 +29,7 @@ class GroupEventsController < ApplicationController
 	  @ge.save
 	  redirect_to @ge
 	end
+	
   	def show
     	@ge = GroupEvent.find(params[:id])
   	end

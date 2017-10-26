@@ -18,9 +18,14 @@
     <%= form.label :duration %><br>
     <%= form.number_field :duration %>
   </p>
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
   <p>    
-    <%= form.submit :publish %>
-    <%= form.submit :draft %>
+    <%= form.submit :publish , {:class=>"btn btn-primary"} %>
+    <%= form.submit :draft , {:class=>"btn btn-default"} %>
+  </p>
   </p>
 
   <%= link_to 'Cancel', group_events_path %>
