@@ -18,14 +18,20 @@
 //= require_tree .
 
 function submitForm (button){	
-	console.log(button);
-	if (button.value == "publish"){
-		
-	}
-	else if (button.value == "draft")
-	{
-		/* stay in the same window */
+	var returnValue = true;	
+	if (button.value == "publish"){		
+		$(".newform :input").each(function() {			
+		   if($(this).val() === ""){				   	
+		   	$('.warnings').show();
+		   	$('.warnings').html('You have to input all fields to publish');		   	
+		   	returnValue = false;
+		   }		    
+		});
+  	}else if (button.value == "draft"){
+		$('.newform').submit();
 	} 
-
-  	return false;
+	if(returnValue){
+		$('.newform').submit();	
+	}
+	return returnValue;
 }

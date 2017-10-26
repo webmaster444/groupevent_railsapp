@@ -1,16 +1,16 @@
 
-<div class="alert alert-danger">
+<div class="alert alert-danger warnings">
   Something went wrong
 </div> 
 <%= form_with scope: :group_event, url: group_events_path, class: "newform", local: true do |form| %>
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name ,{:id=>"event_name"}%>
   </p>
  
   <p>
     <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= form.text_area :description ,{:id=>"event_desc"}%>
   </p>
   
   <p>

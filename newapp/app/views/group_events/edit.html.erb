@@ -1,17 +1,17 @@
 <h1>Edit Group Event</h1>
 
-<div class="alert alert-danger">
+<div class="alert alert-danger warnings">
   Something went wrong
 </div> 
 <%= form_with(model: @ge, :class=>'newform') do |form| %>
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name ,{:id=>"event_name"}%>
   </p>
  
   <p>
     <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= form.text_area :description ,{:id=>"event_desc"}%>
   </p>
   
   <p>
