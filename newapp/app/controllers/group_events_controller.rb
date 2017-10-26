@@ -10,8 +10,22 @@ class GroupEventsController < ApplicationController
 	  	redirect_to @ge
 	end
 	def create
+	    if params[:commit] == 'publish'
+	      publish_event
+	    else
+	      draft_event
+	    end
+	end
+
+	def publish_event
 	  @ge = GroupEvent.new(groupevent_params)
- 
+ 		@ge.status = 'Publised'
+	  @ge.save
+	  redirect_to @ge
+	end
+	def draft_event
+	  @ge = GroupEvent.new(groupevent_params)
+ 		@ge.status = 'Draft'
 	  @ge.save
 	  redirect_to @ge
 	end
@@ -25,9 +39,17 @@ class GroupEventsController < ApplicationController
   	def edit
   		@ge = GroupEvent.find(params[:id])
   	end
-  	def update
-		@ge = GroupEvent.find(params[:id])
- 
+  	def update		 
+	    if params[:commit] == 'publish'
+	      update_publish_event
+	    else
+	      update_draft_event
+	    end
+  	end
+
+  	def update_publish_event
+	    @ge = GroupEvent.find(params[:id])
+	    @ge.status = 'Published'
 	  	if @ge.update(groupevent_params)
 	    	redirect_to @ge
 	  	else
@@ -35,29 +57,17 @@ class GroupEventsController < ApplicationController
 	  	end
   	end
 
-  	def publish
-		@ge = GroupEvent.find(params[:id])
- 		 		
-	  	if @ge.update('status': 'Published')
+  	def update_draft_event
+	    @ge = GroupEvent.find(params[:id])
+	    @ge.status= "Draft"
+	  	if @ge.update(groupevent_params)
 	    	redirect_to @ge
 	  	else
 	    	render 'edit'
 	  	end
-	end
-  	
-  	def draft
-		@ge = GroupEvent.find(params[:id])
- 		 		
-	  	if @ge.update('status': 'Draft')
-	    	redirect_to @ge
-	  	else
-	    	render 'edit'
-	  	end
-	end
-
+  	end
 	private
-	def groupevent_params	
-		abort params.inspect			
+	def groupevent_params					
 	    params.require(:group_event).permit(:name, :description, :startdate, :duration, :status)
 	end
 end
