@@ -24,6 +24,10 @@
     <%= form.number_field :duration %>
   </p>
   <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+  <p>
     <%= form.submit :publish , {:class=>"btn btn-primary" , :onclick => "return submitForm(this);"}%>
     <%= form.submit :draft, {:class=>"btn btn-default", :onclick => "return submitForm(this);"} %>
   </p>

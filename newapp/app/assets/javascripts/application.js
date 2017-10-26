@@ -28,7 +28,11 @@ function submitForm (button){
 		   }		    
 		});
   	}else if (button.value == "draft"){
-		$('.newform').submit();
+		if($('#event_name').val()==""){
+	   		$('.warnings').show();
+		   	$('.warnings').html('Event name is required field');	
+			returnValue =false;
+		}
 	} 
 	if(returnValue){
 		$('.newform').submit();	

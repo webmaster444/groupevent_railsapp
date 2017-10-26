@@ -69,6 +69,6 @@ class GroupEventsController < ApplicationController
   	end
 	private
 	def groupevent_params					
-	    params.require(:group_event).permit(:name, :description, :startdate, :duration, :status)
+	    params.require(:group_event).permit(:name, :description, :startdate, :duration, :status, :location)
 	end
 end
